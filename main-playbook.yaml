@@ -1,0 +1,12 @@
+---
+- hosts: master
+  become: yes
+  vars:
+    pod_network_cidr: "192.168.0.0/16"
+  roles:
+    - master-node
+    
+- hosts: worker
+  become: yes
+  roles: 
+    - worker-node
